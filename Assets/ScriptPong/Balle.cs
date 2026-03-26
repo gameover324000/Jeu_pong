@@ -20,13 +20,13 @@ public class Balle : MonoBehaviour
         if (transform.position.y >= 4.5f || transform.position.y <= -4.5f)
             dirY = -dirY;
  
-        if (transform.position.x <= -10.5f)
+        if (transform.position.x <= -8.5f)
         {
             ScoreManager.joueur2++;
             ResetBalle();
         }
  
-        if (transform.position.x >= 10.5f)
+        if (transform.position.x >= 8.5f)
         {
             ScoreManager.joueur1++;
             ResetBalle();

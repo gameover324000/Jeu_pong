@@ -31,13 +31,15 @@ public class Balle : MonoBehaviour
             ScoreManager.joueur1++;
             ResetBalle();
         }
+
+
     }
  
     void ResetBalle()
     {
         transform.position = Vector2.zero;
         dirX = -dirX;
-        vitesse = vitesseInitiale;
+        vitesse = 5f;
     }
  
     void OnCollisionEnter2D(Collision2D collision)

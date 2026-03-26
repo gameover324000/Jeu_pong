@@ -3,9 +3,15 @@ using UnityEngine;
 public class Balle : MonoBehaviour
 {
     public float vitesse = 5f;
- 
+    float vitesseInitiale;
+    
     float dirX = 1f;
     float dirY = 1f;
+
+    void start()
+    {
+     vitesseInitiale = vitesse;
+    }
  
     void Update()
     {
@@ -31,6 +37,7 @@ public class Balle : MonoBehaviour
     {
         transform.position = Vector2.zero;
         dirX = -dirX;
+        vitesse = vitesseInitiale;
     }
  
     void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +45,7 @@ public class Balle : MonoBehaviour
         if (collision.gameObject.CompareTag("Raquette"))
         {
             dirX = -dirX;
+            vitesse += 2f;
         }
     }
 }   
